@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5 thực hành 2</title>
+    <style>
+        .container {
+   height: 280px;
+   width: 500px;
+   margin-left: auto;
+   margin-right: auto;
+   background-color: rgb(111, 111, 111);
+}
+
+.nav{
+    height: 70px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sub {
+    margin-top: 10px;
+    height: 50px;
+    width: 295px;
+    border: 1px solid black;
+    margin-left: 50px;
+    float: left;
+    background-color: rgb(184, 184, 184);
+}
+
+.pass {
+    margin-top: 15px;
+    height: 50px;
+    width: 295px;
+    border: 1px solid black;
+    margin-left: 50px;
+    float: left;
+    background-color: rgb(184, 184, 184);
+}
+
+.log {
+    margin-top: 15px;
+    height: 140px;
+    width: 65px;
+    float: left;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+
+
+    </style>
+    <script>
+        function showAlert() {
+  alert('Bạn muốn hiện mật khẩu');
+
+}
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="nav"><img src="./image/Bài 5.1.png" width="30px" style="margin-top: 30px; border: none;" ><b style="font-size: 35px; color: rgb(184, 184, 184)">     Login</b></div>
+        <table >
+            <tr>
+                <td><div class="sub"><input type="text" style="width: 250px; height: 45px; float: left;  background-color: rgb(184, 184, 184); border: none;">  <img src="./image/ảnh 1.6.png"  height="30px" style="float: left; margin-top: 10px; margin-left: 6px; border: none;"></div></td>
+                <td rowspan="2" style="padding-left: 20px;"><a href="#"><div class="log"> <img src="./image/bai5.2.png" style="height: 20px;"> </div></a></td>
+            </tr>
+            <tr>
+                <td><div class="pass"><input type="password" style="width: 250px; height: 45px; float: left;  background-color: rgb(184, 184, 184); border: none;">  <img src="./image/ảnh 2.6.png" onclick="showAlert()" height="30px" style="float: left; margin-top: 10px; margin-left: 6px; border: none;"></div></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

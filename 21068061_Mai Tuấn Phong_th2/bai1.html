@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h2>Giải phương trình bậc 1</h2>
+        <input id="a" type="number" placeholder="Nhập hệ số a">
+        <input id="b" type="number" placeholder="Nhập hệ số b">
+        <button onclick="solve()">Giải phương trình</button>
+        <h2>Kết quả</h2>
+        <p id="result"></p>
+    </div>
+    <script>
+        function solve() {
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var result = document.getElementById('result');
+            if (a == 0) {
+                result.innerHTML = (b == 0) ? "Phương trình vô số nghiệm" : "Phương trình vô nghiệm";
+            } else {
+                result.innerHTML = "Nghiệm của phương trình là: " + (-b/a);
+            }
+        }
+    </script>
+</body>
+</html>

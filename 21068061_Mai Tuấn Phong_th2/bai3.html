@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.table-2 {
+   
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.tb2 {
+   margin-bottom: 43px;
+   margin-right: 760px;
+}
+
+.inputs {
+   margin: 10px;
+   padding:10px;
+   width: 350px;
+}
+
+.inputs-3 {
+   padding-bottom: 150px;
+}
+
+.tb1 {
+   margin-bottom: 403px;
+   line-height: 2;
+}
+
+.btn-mess {
+   margin-left: 11px;
+   padding: 15px;
+   color:rgb(253, 253, 253);
+   background-color: #008CBA;
+}
+
+.ngang {
+   border: 1px solid;
+   width: 100;
+   color: rgb(255, 0, 0)
+}
+
+.h1{
+   color: blue
+}
+    </style>
+    <script>
+        function showAlert() {
+            var hoTen = document.getElementById("ho-ten").value;
+            var diaChi = document.getElementById("dia-chi").value;
+            var tieuDe = document.getElementById("tieu-de").value;
+            var noiDung = document.getElementById("noi-dung").value;
+
+            alert("Họ và tên: " + hoTen + "\nĐịa chỉ email: " + diaChi + "\nTiêu đề: " + tieuDe + "\nNội dung: " + noiDung);
+        }
+    </script>
+</head>
+<body>
+    <div class="h1">
+        <h1>LIÊN HỆ </h1>
+    </div>
+
+    <div class="ngang"></div>
+
+    <div class="table-2">
+        <div class="tb1">
+            <h3>Thông tin</h3>
+            <span> 📌 Kp.6, P.Linh Trung, TP.Thủ Đức, TPHCM</span> <br>
+            <span> ✉️ info@uit.edu.vn</span> <br>
+            <span> 📞 +842837252002</span> 
+        </div>
+        <div class="tb2">
+            <h3 style="color: rgb(245, 20, 241);">Hãy liên lạc với chúng tôi bất cứ khi nào!!!</h3>
+            <input id="ho-ten" class="inputs" placeholder="Họ và tên" required> <br>
+            <input id="dia-chi" class="inputs" placeholder="Địa chỉ email" required> <br>
+            <input id="tieu-de" class="inputs" placeholder="Tiêu đề bài về" required> <br>
+            <input id="noi-dung" class="inputs inputs-3" placeholder="Nội dung cần gửi" required> <br>
+            <button id="showAlertBtn" class="btn-mess" onclick="showAlert()">Gửi tin nhắn ☑️ <img src="  "> </button>
+        </div>
+       
+</body>
+</html>

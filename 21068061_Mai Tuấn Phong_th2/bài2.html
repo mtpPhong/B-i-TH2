@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: purple;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; 
+    background-color: #d6d4d4;
+    padding: 20px;
+    width: 50%;
+}
+
+input, select, textarea {
+    width: 100%;
+    height: 50px;
+    border: none; 
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    width: 50%;
+    height: 50px;
+    background-color: rgb(52, 52, 240);
+    color: white;
+    border: none; 
+}
+</style>
+<script>
+function showInput() {
+    var name = document.getElementById('name').value;
+    var card = document.getElementById('card').value;
+    var phone = document.getElementById('phone').value;
+    var email = document.getElementById('email').value;
+    var bill = document.getElementById('bill').value;
+    var customerType = document.getElementById('customerType').value;
+    alert("Họ và tên: " + name + "\nMã thẻ: " + card + "\nSố điện thoại: " + phone + "\nEmail: " + email + "\nMã hóa đơn: " + bill + "\nLoại khách hàng: " + customerType);
+    return false; // Ngăn chặn form được gửi đi
+}
+</script>
+</head>
+<body>
+
+<h1>ĐÓNG GÓP Ý KIẾN VỀ SẢN PHẨM</h1>
+<p style="margin-bottom: 0;">Góp ý kiến của bạn sẽ được chúng tôi xem xét, vui lòng nhập tiếng việt có dấu</p>
+<p style="margin-top: 0;">Các ý kiến đóng nên viết chi tiết rõ ràng, kèm theo các minh chứng xác thực thời gian và địa điểm (nếu có)</p>
+
+<form onsubmit="return showInput();">
+    <input type="text" id="name" placeholder="Họ và tên">
+    <input type="text" id="card" placeholder="Mã thẻ">
+    <input type="text" id="phone" placeholder="Số điện thoại">
+    <input type="text" id="email" placeholder="E-mail">
+    <select id="customerType">
+      <option value="Chọn loại khách hàng">Chọn loại khách hàng</option>
+        <option value="vip">VIP</option>
+        <option value="normal">Normal</option>
+        <option value="new">New</option>
+    </select>
+    <input type="text" id="bill" placeholder="Mã hóa đơn">
+    <textarea placeholder="Nhập chi tiết mô tả" style="grid-column: span 2;"></textarea>
+    <button type="submit">GỬI GÓP Ý 📬</button>
+</form>
+
+</body>
+</html>

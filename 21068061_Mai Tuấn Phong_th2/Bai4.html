@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #4b3b3b;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .title {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        input[type="number"] {
+            color: red;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .result .bmi {
+            color: blue;
+        }
+        .result .label {
+            color: black;
+        }
+        .result .advice {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="bmiForm">
+        <div class="title">TÍNH CHỈ SỐ BMI</div><br>
+        <label for="weight">Nhập cân nặng?</label><br>
+        <input type="number" id="weight" required><br>
+        <label for="height">Nhập chiều cao? (m)</label><br>
+        <input type="number" id="height" step="0.01" required><br>
+        <label for="age">Chọn loại tuổi?</label><br>
+        <select id="age" required>
+            <option value="Trung niên">Trung niên</option>
+            <option value="Trung niên, Già lớn tuổi">Trung niên, Già lớn tuổi</option>
+            <option value="Già, lớn tuổi">Già, lớn tuổi</option>
+        </select><br>
+
+        <button type="submit">TÍNH BMI</button>
+        <div class="result"></div>
+    </form>
+    <script>
+        document.getElementById('bmiForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var weight = document.getElementById('weight').value;
+            var height = document.getElementById('height').value;
+            var age = document.getElementById('age').value;
+            var bmi = weight / (height * height);
+            var result = '<div class="label">KẾT QUẢ</div><div class="bmi">' + bmi.toFixed(2) + '</div>';
+            if (bmi < 18.5) {
+                result += '<div class="advice">Dưới chuẩn</div>';
+            } else if (bmi < 24.9) {
+                result += '<div class="advice">Bình thường</div>';
+            } else if (bmi < 29.9) {
+                result += '<div class="advice">Thừa cân</div>';
+            } else if (bmi < 34.9) {
+                result += '<div class="advice">Béo phì cấp độ I</div>';
+            } else if (bmi < 39.9) {
+                result += '<div class="advice">Béo phì cấp độ II</div>';
+            } else {
+                result += '<div class="advice">Béo phì cấp độ III</div>';
+            }
+            if (age === 'Trung niên') {
+                result += '<div class="advice">Khánh định kì</div>';
+            } else if (age === 'Trung niên, Già lớn tuổi') {
+                result += '<div class="advice">Tập thể dục thường xuyên</div>';
+            } else {
+                result += '<div class="advice">Hạn chế ăn mỡ động vật</div>';
+            }
+            document.querySelector('.result').innerHTML = result;
+        });
+    </script>
+</body>
+</html>
